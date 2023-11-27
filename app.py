@@ -9,7 +9,7 @@ pdfs = {}
 # Allow multiple uploads with a while loop
 uploaded = True
 while uploaded:
-    uploaded_file = st.file_uploader("Choose a PDF", type=['pdf'])
+    uploaded_file = st.file_uploader("Choose a PDF", type=['pdf'], key=str(uuid.uuid4()))
     if uploaded_file is not None:
         file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type}
         pdfs[uploaded_file.name] = uploaded_file.read()
